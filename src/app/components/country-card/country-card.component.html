@@ -1,0 +1,33 @@
+<div
+  *ngIf="country"
+  class="country-card shadow"
+>
+  <div class="country-card-info">
+    <h2>{{ country.name.common }}</h2>
+    <hr>
+    <br>
+    <p>
+      <strong>Poblacion:</strong>
+      {{ country.population | number: '1.0' }}
+    </p>
+    <p>
+      <strong>Region:</strong>
+      {{ country.region }}
+    </p>
+    <p>
+      <strong>Capital:</strong>
+      {{ country.capital }}
+    </p>
+    <br>
+    <p>
+      <strong>Ubicacion Google Maps:</strong>
+      <br>
+      <a href='{{ country.maps.googleMaps }}' target="_blank">{{ country.maps.googleMaps }}</a>
+    </p>
+  </div>
+  <hr>
+  <br>
+  <div class="country-card-img">
+    <img [src]="country.flags.svg" />
+  </div>
+</div>

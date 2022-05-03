@@ -1,0 +1,22 @@
+<div class="country-filters">
+  <app-dropdown
+    placeholder="Filtrar por Region"
+    [values]="regionOptions"
+    [(value)]="regionFilter"
+  ></app-dropdown>
+  <div class="search-filter shadow">
+    <span class="fa fa-search"></span>
+    <input
+      type="text"
+      placeholder="Consulta por ciudad..."
+      [(ngModel)]="searchFilter"
+    />
+  </div>
+</div>
+
+<div class="country-cards">
+  <app-country-card
+    *ngFor="let country of countries"
+    [country]="country"
+  ></app-country-card>
+</div>
